@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       META + TITLE
+  ========================================== -->
+  <meta charset="UTF-8">
+  <title>Contact Us | JLG Boom Lift & Access Platform Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONT: POPPINS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================
+       STYLES – JLG THEME (BLACK / BLUE / SAND)
+  ========================================== -->
+  <style>
+    :root {
+      --clr-black: #000000;
+      --clr-blue: #4A70A9;
+      --clr-blue-light: #8FABD4;
+      --clr-sand: #C9B59C;
+      --clr-green: #31694E;
+      --clr-white: #ffffff;
+      --clr-text-main: #1A1A1A;
+    }
+
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-sand);
+      color: var(--clr-text-main);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for navbar fragment */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* BUTTONS – ONLY COLOUR CHANGE ON HOVER */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-blue);
+      outline: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: var(--clr-white);
+      color: var(--clr-blue);
+      white-space: normal;    /* allow wrapping */
+      text-align: center;     /* keep multi-line centered */
+      line-height: 1.3;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-on-dark {
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-on-dark:hover {
+      background-color: var(--clr-blue-light);
+      color: var(--clr-black);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-ghost-dark {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.7);
+      color: var(--clr-white);
+    }
+
+    .btn-ghost-dark:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-blue);
+      border-color: var(--clr-white);
+    }
+
+    /* SECTION HEADINGS */
+    .section-heading {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--clr-black);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #262626;
+      max-width: 36rem;
+    }
+
+    .section-heading.center {
+      text-align: center;
+    }
+
+    .section-heading.center .section-sub {
+      margin: 0.4rem auto 0;
+    }
+
+    /* =========================================
+       SECTION 1: CONTACT HERO (JLG STYLE)
+    ========================================== */
+    .hero {
+      background-color: var(--clr-black);
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      background-image: url("./images/s2.png"); /* replace with your image */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(74, 112, 169, 0.9), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.98));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.6rem;
+      padding: 3rem 2.6rem;
+      align-items: center;
+      color: var(--clr-white);
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      color: var(--clr-blue-light);
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-contact-lines {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-contact-line {
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-contact-line a {
+      color: var(--clr-blue-light);
+      text-decoration: none;
+    }
+
+    .hero-contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-aside {
+      background-color: rgba(0, 0, 0, 0.82);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(143, 171, 212, 0.7);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.94);
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .hero-aside-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-aside-list {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+    }
+
+    .hero-aside-note {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+    }
+
+    /* =========================================
+       SECTION 2: CONTACT CHANNELS
+    ========================================== */
+    .channels {
+      background-color: var(--clr-sand);
+    }
+
+    .channels-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .channel-card {
+      background-color: var(--clr-white);
+      border-radius: 20px;
+      padding: 1.4rem 1.2rem 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      font-size: 0.88rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .channel-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+    }
+
+    .channel-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .channel-text {
+      color: #262626;
+    }
+
+    .channel-line {
+      font-size: 0.9rem;
+    }
+
+    .channel-line a {
+      color: var(--clr-blue);
+      text-decoration: none;
+    }
+
+    .channel-line a:hover {
+      text-decoration: underline;
+    }
+
+    .channel-footer {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #555555;
+    }
+
+    /* =========================================
+       SECTION 3: QUICK QUESTIONS STRIP
+    ========================================== */
+    .questions {
+      background-color: var(--clr-sand);
+    }
+
+    .questions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.1rem;
+      align-items: center;
+    }
+
+    .questions-text {
+      font-size: 0.9rem;
+      color: #262626;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .questions-bullets {
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.88rem;
+    }
+
+    .questions-bullets span::before {
+      content: "• ";
+    }
+
+    .questions-card {
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      padding: 1.3rem 1.2rem;
+      font-size: 0.88rem;
+    }
+
+    .questions-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .questions-card-text {
+      color: #262626;
+      margin-bottom: 0.75rem;
+    }
+
+    .questions-card-meta {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 0.7rem;
+    }
+
+    /* =========================================
+       SECTION 4: INLINE FORM (VISIBLE)
+    ========================================== */
+    .inline-form {
+      background-color: var(--clr-white);
+    }
+
+    .inline-form-card {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #inline-form-slot > * {
+      width: 100%;
+    }
+
+    /* =========================================
+       BOTTOM CTA
+    ========================================== */
+    .bottom-cta {
+      background-color: var(--clr-black);
+      color: var(--clr-white);
+      text-align: center;
+      padding: 3rem 1.5rem 3.2rem;
+    }
+
+    .bottom-cta .container {
+      max-width: 720px;
+    }
+
+    .bottom-cta-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .bottom-cta-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 1rem;
+    }
+
+    .bottom-cta-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .bottom-cta-line a {
+      color: var(--clr-blue-light);
+      text-decoration: none;
+    }
+
+    .bottom-cta-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-cta-btn-row {
+      margin-top: 1.4rem;
+    }
+
+    /* MODAL FORM POPUP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--clr-black);
+      color: var(--clr-white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        margin-top: 1.4rem;
+      }
+
+      .channels-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .questions-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero-inner {
+        padding: 2.6rem 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .channels-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 4.1rem;
+        padding-bottom: 3.2rem;
+      }
+
+      .hero-inner {
+        padding: 2.4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR PLACEHOLDER -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- =========================================
+         SECTION 1: CONTACT HERO
+    ========================================== -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <!-- LEFT -->
+          <div>
+            <div class="hero-kicker">
+              CONTACT • JLG BOOM LIFTS • SCISSOR LIFTS • ACCESS PLATFORMS
+            </div>
+            <h1 class="hero-title">
+              Share your access plan and we’ll help refine the boom lift rental.
+            </h1>
+            <p class="hero-text">
+              A short note about your site, height and timing is enough to start. We can then suggest
+              JLG boom lifts and other access platforms that match what you need to reach safely.
+            </p>
+            <p class="hero-meta">
+              PROJECT-BY-PROJECT SUPPORT · PRACTICAL OPTIONS · CLEAR COMMUNICATION
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-on-dark js-open-form">
+                Click here to send your contact details and requirement
+              </button>
+            </div>
+
+            <div class="hero-contact-lines">
+              <p class="hero-contact-line">
+                CALL: <a href="tel:+917200034355">+91 72000 34355</a>
+              </p>
+              <p class="hero-contact-line">
+                EMAIL: <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+              </p>
+              <p class="hero-contact-line">
+                HOURS: Monday to Saturday · 9:00 AM – 7:00 PM
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT ASIDE -->
+          <aside class="hero-aside">
+            <h2 class="hero-aside-title">What to include in your first message.</h2>
+            <div class="hero-aside-list">
+              <span>• City, site type and a simple line on what you plan to do at height.</span>
+              <span>• Approximate working height and whether there is clear access from gate to work areas.</span>
+              <span>• Whether you expect to use JLG boom lifts only, or also scissor lifts / vertical lifts / truck-mounted units.</span>
+              <span>• If you prefer to use your own operators or want us to provide trained operators.</span>
+            </div>
+            <!-- <p class="hero-aside-note">
+              Click here in the form to attach a quick sketch or photos if that explains your site faster than text.
+            </p> -->
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: CONTACT CHANNELS
+    ========================================== -->
+    <section class="channels">
+      <div class="container">
+        <header class="section-heading">
+          <p class="section-tag">Ways to reach the JLG boomlifts team</p>
+          <h2 class="section-title">Choose the contact route that fits your day</h2>
+          <p class="section-sub">
+            Whether you prefer a quick call, a detailed email or a guided form, your enquiry comes to
+            the same team that handles boom lift rentals every day.
+          </p>
+        </header>
+
+        <div class="channels-grid">
+          <!-- CARD 1 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 01</p>
+            <h3 class="channel-title">Quick call for immediate questions</h3>
+            <p class="channel-text">
+              Best when you want to test an idea, compare machines for a live site or clarify something
+              before you send drawings.
+            </p>
+            <p class="channel-line">
+              CALL: <a href="tel:+917200034355">+91 72000 34355</a>
+            </p>
+            <p class="channel-footer">
+              Fast clarifications · Live sites · Urgent decisions
+            </p>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 02</p>
+            <h3 class="channel-title">Structured enquiry by email</h3>
+            <p class="channel-text">
+              Handy when you have sketches, photos or internal approvals and want a written response
+              for JLG boom lifts or a mix of access equipment.
+            </p>
+            <p class="channel-line">
+              EMAIL: <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+            </p>
+            <p class="channel-footer">
+              Attach layouts · Share scope notes · Request quotes
+            </p>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 03</p>
+            <h3 class="channel-title">Click here to use the online enquiry form</h3>
+            <p class="channel-text">
+              The form walks you through height, access, timing and operator needs so all key details
+              reach us together.
+            </p>
+            <button class="btn js-open-form">
+              Click here to open the contact & rental enquiry form
+            </button>
+            <p class="channel-footer">
+              Guided questions · Less back-and-forth
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: QUICK QUESTIONS STRIP
+    ========================================== -->
+    <section class="questions">
+      <div class="questions-inner">
+        <!-- LEFT -->
+        <div class="questions-text">
+          <header class="section-heading" style="margin-bottom:1.1rem;">
+            <p class="section-tag">Not sure how to frame the enquiry?</p>
+            <h2 class="section-title">Simple prompts you can copy into your message</h2>
+          </header>
+          <p>
+            You don’t need technical drawings to start. Even a few basic lines like these help us send
+            back a practical suggestion for your JLG boom lift requirement.
+          </p>
+          <div class="questions-bullets">
+            <span>“We need to reach roughly ___ metres to work on ___ at our site in ___.”</span>
+            <span>“The work area is indoors/outdoors and the floor is mostly ___.”</span>
+            <span>“We expect the job to run from ___ to ___ and may need machines in single/double shifts.”</span>
+            <span>“Please suggest whether a boom lift alone is enough or if we should also plan scissor / vertical lifts.”</span>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <aside class="questions-card">
+          <h3 class="questions-card-title">Click here if you already have a draft access plan</h3>
+          <p class="questions-card-text">
+            If you’ve prepared an internal access plan or received suggestions from another source,
+            you can still send it across. We can review it for reach, movement and basic safety points.
+          </p>
+          <p class="questions-card-meta">
+            PLAN REVIEW · SECOND OPINION · RISK HIGHLIGHTS
+          </p>
+          <button class="btn js-open-form">
+            Click here to upload your outline and ask for a review
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: INLINE FORM (VISIBLE)
+    ========================================== -->
+    <section class="inline-form">
+      <div class="container">
+        <header class="section-heading center">
+          <p class="section-tag">Send your details online</p>
+          <h2 class="section-title">Use the enquiry form on this page</h2>
+          <p class="section-sub">
+            The same form appears here and in the popup. Fill it once with your contact details and
+            access requirement so we have everything we need to respond clearly.
+          </p>
+        </header>
+
+        <div class="inline-form-card">
+          <div id="inline-form-slot">
+            <!-- form.html will be injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         BOTTOM CTA
+    ========================================== -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2 class="bottom-cta-title">
+          Ready to turn your height access idea into a JLG boom lift plan?
+        </h2>
+        <p class="bottom-cta-text">
+          Click below, send a short description of your work at height and we’ll help you choose
+          between JLG boom lifts and other platforms, with deployment dates aligned to your project.
+        </p>
+
+        <p class="bottom-cta-meta">
+          JLG BOOMLIFTS · PAN-INDIA SUPPORT · PRACTICAL RECOMMENDATIONS
+        </p>
+
+        <p class="bottom-cta-line">
+          CALL: <a href="tel:+917200034355">+91 72000 34355</a>
+        </p>
+        <p class="bottom-cta-line">
+          EMAIL: <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+        </p>
+
+        <div class="bottom-cta-btn-row">
+          <button class="btn btn-on-dark js-open-form">
+            Click here to send a contact & rental enquiry now
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM MODAL (form.html also here) -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html will be injected here as well -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load navbar
+      fetch("navbar.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading navbar.html", err);
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading footer.html", err);
+        });
+
+      // Setup popup + inline form
+      setupFormPopup();
+      loadInlineForm();
+    });
+
+    // POPUP FORM: loads form.html fragment into modal
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.classList.contains("js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(function () {
+              modalContent.innerHTML =
+                "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#000000;'>Unable to load the enquiry form right now.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+
+    // INLINE FORM: load form.html into visible slot
+    function loadInlineForm() {
+      var slot = document.getElementById("inline-form-slot");
+      if (!slot) return;
+
+      fetch("form.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          slot.innerHTML = html;
+        })
+        .catch(function () {
+          slot.innerHTML =
+            "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#000000;text-align:center;'>Unable to load the enquiry form right now. Please try again or use the call/email options above.</div>";
+        });
+    }
+  </script>
+</body>
+</html>

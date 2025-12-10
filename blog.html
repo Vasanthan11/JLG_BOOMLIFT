@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       META + TITLE
+  ========================================== -->
+  <meta charset="UTF-8">
+  <title>Blog | JLG Boomlifts | Work at Height Notes & Updates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT: POPPINS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================
+       STYLES – JLG BOOMLIFTS THEME
+  ========================================== -->
+  <style>
+    :root {
+      --clr-black: #000000;
+      --clr-blue: #4A70A9;
+      --clr-blue-light: #8FABD4;
+      --clr-sand: #C9B59C;
+      --clr-green: #31694E;
+      --clr-white: #ffffff;
+    }
+
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-sand);
+      color: var(--clr-black);
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for fixed navbar */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* BUTTONS – ONLY COLOUR CHANGE ON HOVER */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-blue);
+      outline: none;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: var(--clr-white);
+      color: var(--clr-blue);
+      white-space: normal;
+      text-align: center;
+      line-height: 1.3;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-on-dark {
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-on-dark:hover {
+      background-color: var(--clr-blue-light);
+      color: var(--clr-black);
+      border-color: var(--clr-blue);
+    }
+
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-blue);
+      border-color: var(--clr-blue);
+    }
+
+    /* SHARED SECTION HEADING */
+    .section-heading {
+      margin-bottom: 2.3rem;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--clr-black);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.94rem;
+      color: #262626;
+      max-width: 34rem;
+    }
+
+    /* =========================================
+       HERO – JLG THEME
+    ========================================== */
+    .hero {
+      background-color: var(--clr-black);
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      background-image: url("./images/b3.png"); /* replace with your hero image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(74,112,169,0.65), rgba(0,0,0,0.76));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.6rem;
+      padding: 3rem 2.5rem;
+      color: var(--clr-white);
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-size: 2.35rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .hero-aside {
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(143,171,212,0.6);
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    .hero-aside-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-aside-text {
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-aside-list {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-aside-note {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--clr-blue-light);
+      margin-top: 0.3rem;
+    }
+
+    /* =========================================
+       SECTION 2: LATEST ARTICLES (GRID)
+    ========================================== */
+    .latest-articles {
+      background-color: var(--clr-sand);
+    }
+
+    .latest-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.3rem;
+      align-items: flex-start;
+      margin-top: 1.3rem;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .article-card {
+      background-color: var(--clr-white);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      font-size: 0.86rem;
+    }
+
+    .article-img {
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .article-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      padding: 0.9rem 0.95rem 1.1rem;
+      display: grid;
+      gap: 0.25rem;
+      color: #232323;
+    }
+
+    .article-tag {
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+    }
+
+    .article-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .article-text {
+      font-size: 0.86rem;
+      color: #333333;
+    }
+
+    .article-meta {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #555555;
+      margin-top: 0.3rem;
+    }
+
+    .article-cta {
+      margin-top: 0.6rem;
+    }
+
+    /* RIGHT COLUMN: SHORT NOTES / TIPS */
+    .notes-panel {
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1.4rem 1.3rem;
+    }
+
+    .notes-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--clr-black);
+    }
+
+    .notes-text {
+      font-size: 0.88rem;
+      color: #333333;
+      margin-bottom: 0.8rem;
+    }
+
+    .notes-list {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #2b2b2b;
+      margin-bottom: 0.9rem;
+    }
+
+    .notes-item-label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .notes-footer {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+      margin-bottom: 0.7rem;
+    }
+
+    /* =========================================
+       SECTION 3: TOPIC CATEGORIES
+    ========================================== */
+    .topics {
+      background-color: var(--clr-white);
+    }
+
+    .topics-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+
+    .topic-card {
+      border-radius: 18px;
+      padding: 1rem 0.9rem 1.1rem;
+      background-color: var(--clr-sand);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+      color: #232323;
+    }
+
+    .topic-head {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .topic-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--clr-blue), var(--clr-blue-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--clr-white);
+      flex-shrink: 0;
+    }
+
+    .topic-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .topic-text {
+      font-size: 0.84rem;
+    }
+
+    /* =========================================
+       SECTION 4: PROJECT STORIES
+    ========================================== */
+    .stories {
+      background-color: var(--clr-sand);
+    }
+
+    .stories-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stories-list {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+      gap: 1.3rem;
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+    }
+
+    .story-img {
+      height: 410px;
+      overflow: hidden;
+    }
+
+    .story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      color: #222222;
+    }
+
+    .story-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+    }
+
+    .story-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-size: 0.88rem;
+    }
+
+    .story-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #555555;
+    }
+
+    .story-cta {
+      margin-top: 0.5rem;
+    }
+
+    /* =========================================
+       SECTION 5: BOTTOM CTA
+    ========================================== */
+    .bottom-cta {
+      background-color: var(--clr-black);
+      color: var(--clr-white);
+      text-align: center;
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+    }
+
+    .bottom-cta .container {
+      max-width: 720px;
+    }
+
+    .bottom-cta-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .bottom-cta-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 1.1rem;
+    }
+
+    .bottom-cta-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .bottom-cta-line a {
+      color: var(--clr-blue-light);
+      text-decoration: none;
+    }
+
+    .bottom-cta-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-cta-btn-row {
+      margin-top: 1.5rem;
+    }
+
+    /* =========================================
+       MODAL FORM POPUP
+    ========================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--clr-black);
+      color: var(--clr-white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        margin-top: 1.3rem;
+      }
+
+      .latest-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .story-card {
+        grid-template-columns: 1fr;
+      }
+
+      .story-img {
+        height: 190px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero-content {
+        padding: 2.6rem 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 4.2rem;
+        padding-bottom: 3.2rem;
+      }
+
+      .hero-content {
+        padding: 2.4rem 1.4rem;
+      }
+
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR FRAGMENT (JLG NAVBAR) -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- =========================================
+         HERO
+    ========================================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <!-- LEFT -->
+          <div>
+            <div class="hero-kicker">
+              JLG BOOMLIFTS BLOG · WORK AT HEIGHT IN INDIA
+            </div>
+            <h1 class="hero-title">
+              Straightforward ideas for better boom lift and access planning.
+            </h1>
+            <p class="hero-text">
+              These notes are written for people who actually run projects – planners, safety teams,
+              maintenance heads and supervisors who use boom lifts and other access platforms on live sites.
+            </p>
+            <p class="hero-meta">
+              PRACTICAL CHECKLISTS · REAL-WORLD EXAMPLES · SHORT EXPLAINERS
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-on-dark js-open-form">
+                Click here to get a summary of our latest posts
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT ASIDE -->
+          <aside class="hero-aside">
+            <h2 class="hero-aside-title">Use blog posts as a shortcut before you book lifts.</h2>
+            <p class="hero-aside-text">
+              Instead of starting from zero each time, you can lean on patterns we see again and again
+              when customers plan boom lift rentals across different sectors.
+            </p>
+            <div class="hero-aside-list">
+              <span>Understand what details actually matter in a boom lift enquiry.</span>
+              <span>See examples of how access was handled in tight or complicated sites.</span>
+              <span>Pick one or two tips to share during your internal planning meetings.</span>
+            </div>
+            <p class="hero-aside-note">
+              Click here to tell us which topics would help your team the most.
+            </p>
+            <div>
+              <button class="btn btn-on-dark js-open-form">
+                Click here to send your suggestions for new blog topics
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: LATEST ARTICLES (GRID)
+    ========================================== -->
+    <section class="latest-articles">
+      <div class="container">
+        <header class="section-heading">
+          <p class="section-tag">Latest from the JLG Boomlifts desk</p>
+          <h2 class="section-title">New posts focused on day-to-day site questions</h2>
+          <p class="section-sub">
+            Each article below is built around a simple question we hear regularly from customers who
+            are planning boom lifts and other access platforms for upcoming work.
+          </p>
+        </header>
+
+        <div class="latest-layout">
+          <!-- LEFT: GRID OF FEATURED ARTICLES -->
+          <div class="article-grid">
+            <!-- ARTICLE 1 -->
+            <article class="article-card">
+              <div class="article-img">
+                <!-- replace with your image -->
+                <img
+                  src="./images/b7.jpg"
+                  alt="Planner reviewing boom lift reach near a structure"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Reach & obstacles</div>
+                <h3 class="article-title">How to think about boom lift outreach when drawings are not exact.</h3>
+                <p class="article-text">
+                  A simple way to look at distance from the structure, required height and possible
+                  obstacles when you only have basic sketches or an older layout.
+                </p>
+                <div class="article-meta">Planning basics · 5–7 minute read</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to ask for the outreach planning note
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 2 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="./images/b10.jpg"
+                  alt="Multiple boom lifts and scissor lifts in a plant"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Multiple machines</div>
+                <h3 class="article-title">Using more than one boom lift without crowding the site.</h3>
+                <p class="article-text">
+                  Thoughts on spacing, route planning and “parking points” when two or more lifts need
+                  to move around the same project at the same time.
+                </p>
+                <div class="article-meta">Site layout · 6–8 minute read</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to share your layout and get a machine spacing outline
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 3 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="./images/b14.png"
+                  alt="Boom lift working on facade during night shift"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Time windows</div>
+                <h3 class="article-title">Making the most of short access windows in live facilities.</h3>
+                <p class="article-text">
+                  How to prepare when you only have a few hours each day to position, complete the
+                  work at height and clear the machine before operations resume.
+                </p>
+                <div class="article-meta">Operations · 5–6 minute read</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to request a short access window checklist
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 4 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="./images/s11.png"
+                  alt="Supervisor guiding an operator around a tight corner"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">On-site behaviour</div>
+                <h3 class="article-title">Simple rules for guiding boom lifts through narrow paths.</h3>
+                <p class="article-text">
+                  A few practical points on spotters, communication and corner checks before you move
+                  a lift through narrow driveways, gates or internal roads.
+                </p>
+                <div class="article-meta">Site movement · 4–6 minute read</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to get a short guide for moving lifts safely on site
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- RIGHT: NOTES / QUICK TIPS PANEL -->
+          <aside class="notes-panel">
+            <h3 class="notes-title">Quick notes you can forward to your team.</h3>
+            <p class="notes-text">
+              Not every topic needs a full article. These short notes are meant to be shared quickly
+              with colleagues on email or chat before a site meeting.
+            </p>
+
+            <div class="notes-list">
+              <div>
+                <span class="notes-item-label">Boom lift vs. platform</span>
+                Why some city jobs are better with a self-propelled boom, while others clearly fit a
+               unit that keeps moving along the road.
+              </div>
+              <div>
+                <span class="notes-item-label">What to double-check on drawings</span>
+                A tiny list of items – like expansion joints, offsets and canopies – that affect how
+                close a boom lift can actually stand.
+              </div>
+              <div>
+                <span class="notes-item-label">Information that speeds up your quote</span>
+                Three or four details that help us give you a realistic option instead of a generic
+                “one size fits all” boom lift suggestion.
+              </div>
+            </div>
+
+            <p class="notes-footer">
+              Click here to send your project sketch or photos and ask which note fits best.
+            </p>
+
+            <button class="btn js-open-form">
+              Click here to request a tailored quick note for your site
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: TOPIC CATEGORIES
+    ========================================== -->
+    <section class="topics">
+      <div class="topics-inner">
+        <header class="section-heading">
+          <p class="section-tag">Browse by role</p>
+          <h2 class="section-title">Find blog content that matches your responsibility</h2>
+          <p class="section-sub">
+            Different people look at the same boom lift in different ways. Use these simple categories
+            to request article links that are most useful to you.
+          </p>
+        </header>
+
+        <div class="topics-grid">
+          <!-- TOPIC 1 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">P</div>
+              <div class="topic-title">Project planners</div>
+            </div>
+            <p class="topic-text">
+              Posts that focus on dates, workfronts, access sequencing and how to keep machines aligned
+              with your project schedule instead of arriving randomly.
+            </p>
+            <!-- <button class="btn js-open-form">
+              Click here to get links for planning-focused posts
+            </button> -->
+          </article>
+
+          <!-- TOPIC 2 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">S</div>
+              <div class="topic-title">Safety / EHS teams</div>
+            </div>
+            <p class="topic-text">
+              Short reminders on ground conditions, exclusion zones, fall arrest use and other points
+              that matter when boom lifts arrive on a live site.
+            </p>
+            <!-- <button class="btn js-open-form">
+              Click here to get a pack of safety-related articles
+            </button> -->
+          </article>
+
+          <!-- TOPIC 3 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">M</div>
+              <div class="topic-title">Maintenance planners</div>
+            </div>
+            <p class="topic-text">
+              Ideas around shutdown windows, repetitive maintenance routes and accessing equipment
+              positioned above floors, platforms and pipe racks.
+            </p>
+            <!-- <button class="btn js-open-form">
+              Click here to ask for maintenance-oriented content
+            </button> -->
+          </article>
+
+          <!-- TOPIC 4 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">O</div>
+              <div class="topic-title">Owners & facility heads</div>
+            </div>
+            <p class="topic-text">
+              Posts that relate boom lifts and access platforms to long-term upkeep: façade work,
+              signage, lighting, inspections and upgrade projects.
+            </p>
+            <!-- <button class="btn js-open-form">
+              Click here to receive articles useful for facility teams
+            </button> -->
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: PROJECT STORIES
+    ========================================== -->
+    <section class="stories">
+      <div class="stories-inner">
+        <header class="section-heading">
+          <p class="section-tag">Project snapshots</p>
+          <h2 class="section-title">How JLG boom lifts fit into real site plans</h2>
+          <p class="section-sub">
+            These are sample scenarios where boom lifts and other platforms were planned early. Swap
+            these images later with your own project photos if you like.
+          </p>
+        </header>
+
+        <div class="stories-list">
+          <!-- STORY 1 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="./images/b5.png"
+                alt="Boom lifts around a large steel structure"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">Industrial structure</div>
+              <h3 class="story-title">
+                Planning boom lifts around a new steel structure before the slab was fully finished.
+              </h3>
+              <p class="story-text">
+                The project team marked out boom lift standing points on drawings and checked that each
+                zone had a clear route from the gate. This kept the structure accessible without blocking
+                heavy material movements.
+              </p>
+              <p class="story-meta">Pre-planning · Route & standing points</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to share your steel layout and ask for suggested boom lift zones
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 2 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="./images/b15.png"
+                alt="Boom lift working in a logistics warehouse"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">Logistics hub</div>
+              <h3 class="story-title">
+                Combining a boom lift and a small vertical lift in an active warehouse.
+              </h3>
+              <p class="story-text">
+                A distribution centre needed high-level camera and lighting work done while operations
+                continued. One boom lift handled open areas; a compact lift covered narrow aisles, each
+                with clear time bands and movement rules.
+              </p>
+              <p class="story-meta">Live operations · Shared space</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to outline your warehouse and get an access mix suggestion
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 3 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="./images/s1.png"
+                alt="Truck-mounted platform on urban street"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">Urban maintenance</div>
+              <h3 class="story-title">
+                Using a platform for scattered sign and lighting points across a city.
+              </h3>
+              <p class="story-text">
+                A city maintenance team used one unit to service multiple points each
+                night. A simple list of stops, turning points and safe parking locations reduced
+                trial-and-error on the road.
+              </p>
+              <p class="story-meta">City work · Mobile access</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to send your city route and discuss mobile boom lift options
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 5: BOTTOM CTA
+    ========================================== -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2 class="bottom-cta-title">
+          Want to connect these ideas to your next boom lift rental?
+        </h2>
+        <p class="bottom-cta-text">
+          If any of the examples or topics on this page sound like your upcoming work, share a short
+          note about your project, location, height and rough dates. We can help you turn the ideas
+          into a practical JLG boom lift access plan.
+        </p>
+
+        <p class="bottom-cta-meta">
+          JLG BOOMLIFTS · PRACTICAL SUPPORT · PAN-INDIA COORDINATION
+        </p>
+
+        <p class="bottom-cta-line">
+          CALL: <a href="tel:+917200034355">+91 72000 34355</a>
+        </p>
+        <p class="bottom-cta-line">
+          EMAIL: <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+        </p>
+
+        <div class="bottom-cta-btn-row">
+          <button class="btn btn-on-dark js-open-form">
+            Click here to send your project details through our enquiry form
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM (form.html) -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load navbar
+      fetch("navbar.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading navbar.html", err);
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading footer.html", err);
+        });
+
+      // Setup popup for form.html
+      setupFormPopup();
+    });
+
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.classList.contains("js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(function () {
+              modalContent.innerHTML =
+                "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#000000;'>Unable to load the enquiry form right now.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

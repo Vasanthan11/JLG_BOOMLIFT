@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You | JLG Boomlifts Enquiry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --clr-black: #000000;
+      --clr-blue: #4A70A9;
+      --clr-blue-light: #8FABD4;
+      --clr-sand: #C9B59C;
+      --clr-white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, var(--clr-blue-light), var(--clr-black));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      color: var(--clr-white);
+    }
+
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      border-radius: 24px;
+      padding: 2.4rem 2.2rem;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(143, 171, 212, 0.5);
+      text-align: center;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-sand);
+      margin-bottom: 0.7rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 0.7rem;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-top: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .contact {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact a {
+      color: var(--clr-sand);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-row {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-blue);
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      text-align: center;
+      white-space: normal;
+      line-height: 1.3;
+    }
+
+    .btn:hover {
+      background-color: var(--clr-sand);
+      color: var(--clr-black);
+      border-color: var(--clr-sand);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.7rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tag">Enquiry received</div>
+    <h1>Thank you for contacting JLG Boomlifts.</h1>
+    <p>
+      Your enquiry has been submitted. Our team will review your height access requirement
+      and get back to you with suggestions and pricing.
+    </p>
+    <p>
+      If your project is urgent, you can also reach us directly using the contact details below.
+    </p>
+
+    <div class="meta">
+      BOOM LIFTS · SCISSOR LIFTS · MANLIFTS
+    </div>
+
+    <p class="contact">
+      CALL: <a href="tel:+917200034355">+91 72000 34355</a>
+    </p>
+    <p class="contact">
+      EMAIL: <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+    </p>
+
+    <div class="btn-row">
+      <a href="index.html" class="btn">Back to home</a>
+      <a href="contact.html" class="btn">Go to contact page</a>
+    </div>
+  </div>
+</body>
+</html>

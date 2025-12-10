@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry Form - JLG Boomlifts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --clr-black: #000000;
+      --clr-blue: #4A70A9;
+      --clr-blue-light: #8FABD4;
+      --clr-sand: #C9B59C;
+      --clr-white: #ffffff;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--clr-sand);
+      color: var(--clr-black);
+      line-height: 1.5;
+    }
+
+    .form-section-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+    }
+
+    .form-section {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      background-color: var(--clr-white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    /* LEFT COLUMN */
+    .form-info {
+      background: linear-gradient(160deg, var(--clr-black), var(--clr-blue));
+      color: var(--clr-white);
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .form-info-top-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clr-sand);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-info-title {
+      font-size: 1.85rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-info-text {
+      font-size: 0.95rem;
+      max-width: 26rem;
+    }
+
+    .form-info-badges {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .form-info-badge {
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+      background: rgba(201, 181, 156, 0.18);
+      border: 1px solid rgba(201, 181, 156, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+    }
+
+    .form-contact-blocks {
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .form-contact-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-sand);
+    }
+
+    .form-contact-value a,
+    .form-contact-value {
+      color: var(--clr-white);
+      text-decoration: none;
+    }
+
+    .form-contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* RIGHT COLUMN */
+    .form-pane {
+      padding: 2.5rem 2.25rem;
+      background-color: var(--clr-white);
+    }
+
+    .form-heading-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clr-blue);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-heading-main {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+
+    .form-heading-sub {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-note-line {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-blue-light);
+      margin-bottom: 1.3rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .form-field.wide {
+      grid-column: 1 / -1;
+    }
+
+    label span {
+      color: var(--clr-blue);
+    }
+
+    input, select, textarea {
+      border-radius: 10px;
+      border: 1px solid #d5d0c7;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      outline: none;
+      font-family: "Poppins", sans-serif;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--clr-blue);
+    }
+
+    .form-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .form-privacy {
+      font-size: 0.78rem;
+      color: #555;
+      max-width: 260px;
+    }
+
+    /* SOLID BLUE BUTTON */
+    .form-submit-btn {
+      border: 1px solid var(--clr-blue);
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 0.75rem 2.4rem;
+      background-color: var(--clr-blue);
+      color: var(--clr-white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* ONLY COLOUR CHANGE ON HOVER */
+    .form-submit-btn:hover {
+      background-color: var(--clr-blue-light);
+      color: var(--clr-black);
+      border-color: var(--clr-blue-light);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .form-section {
+        grid-template-columns: 1fr;
+      }
+      .form-info {
+        display: none;
+      }
+      .form-pane {
+        padding: 2.2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="form-section-wrapper">
+  <div class="form-section">
+
+    <!-- LEFT -->
+    <div class="form-info">
+      <div>
+        <div class="form-info-top-label">Project Enquiry</div>
+        <h2 class="form-info-title">Share your boom or scissor lift requirement</h2>
+        <p class="form-info-text">
+          Tell us your working height, rental duration and site conditions for a fast quote.
+        </p>
+
+        <div class="form-info-badges">
+          <span class="form-info-badge">Quick Quote</span>
+          <span class="form-info-badge">Certified Equipment</span>
+          <span class="form-info-badge">On-Time Delivery</span>
+        </div>
+      </div>
+
+      <div class="form-contact-blocks">
+        <div>
+          <div class="form-contact-label">Call us</div>
+          <div class="form-contact-value">
+            <a href="tel:+917200034355">+91 72000 34355</a>
+          </div>
+        </div>
+        <div>
+          <div class="form-contact-label">Email</div>
+          <div class="form-contact-value">
+            <a href="mailto:info@jigboomlift.in">info@jigboomlift.in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="form-pane">
+      <div class="form-heading-tag">Online Rental Enquiry</div>
+      <h2 class="form-heading-main">Get a Quick Quote</h2>
+
+      <!-- IMPORTANT: PHP ACTION + POST -->
+      <form action="enquiry-submit.php" method="POST" novalidate>
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="fullName">Full Name <span>*</span></label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Contact Number <span>*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-field">
+            <label for="location">Site Location</label>
+            <input type="text" id="location" name="location">
+          </div>
+
+          <div class="form-field wide">
+            <label for="equipment">Equipment Type</label>
+            <select id="equipment" name="equipment">
+              <option value="">Select equipment</option>
+              <option value="Boom Lift">Boom Lift</option>
+              <option value="Scissor Lift">Scissor Lift</option>
+              <option value="Manlift">Manlift</option>
+            </select>
+          </div>
+
+          <div class="form-field wide">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" placeholder="Mention height, duration, indoor/outdoor etc."></textarea>
+          </div>
+
+        </div>
+
+        <div class="form-footer-row">
+          <p class="form-privacy">
+            By submitting this form, you allow JLG Boomlifts to contact you.
+          </p>
+          <button type="submit" class="form-submit-btn">Submit Enquiry</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

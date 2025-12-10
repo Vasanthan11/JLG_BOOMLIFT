@@ -1,0 +1,195 @@
+<!-- NAVBAR FILE – jlg-navbar.html -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<nav class="navbar">
+  <div class="nav-container">
+    
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="./images/logo.png" alt="JLG Boomlifts Logo">
+      </a>
+    </div>
+
+    <!-- HIDDEN CHECKBOX FOR MOBILE TOGGLE -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+    <!-- HAMBURGER ICON (LABEL CONTROLS CHECKBOX) -->
+    <label for="nav-toggle" class="hamburger">☰</label>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links" id="navLinks">
+      <!-- CLOSE BUTTON INSIDE MENU (ALSO LABEL FOR CHECKBOX) -->
+      <li class="close-btn">
+        <label for="nav-toggle">✖</label>
+      </li>
+
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="boom-lift-rentals.html">BOOM LIFT RENTALS</a></li>
+      <li><a href="scissor-lift-rentals.html">SCISSOR LIFT RENTALS</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li>
+        <a href="tel:+917200034355" class="call-btn">CLICK TO CALL US</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<style>
+:root {
+  --clr-black: #000000;
+  --clr-blue: #4A70A9;
+  --clr-blue-light: #8FABD4;
+  --clr-sand: #C9B59C;
+  --clr-green: #31694E;
+  --clr-white: #ffffff;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background: var(--clr-black);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--clr-blue-light);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* HIDE CHECKBOX */
+.nav-toggle {
+  display: none;
+}
+
+/* DESKTOP NAV */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--clr-white);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links li a:hover {
+  color: var(--clr-blue-light);
+  border-color: var(--clr-blue-light);
+}
+
+/* CALL BUTTON */
+.call-btn {
+  background: var(--clr-blue);
+  padding: 12px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--clr-white);
+  border: 1px solid var(--clr-blue);
+}
+
+/* ONLY COLOUR CHANGE ON HOVER */
+.call-btn:hover {
+  background: var(--clr-sand);
+  color: var(--clr-black) !important;
+  border-color: var(--clr-sand);
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: var(--clr-sand);
+}
+
+/* CLOSE BUTTON INSIDE MENU */
+.close-btn {
+  display: none;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    width: 75%;
+    height: 100vh;
+    background: var(--clr-black);
+    padding-top: 80px;
+    text-align: center;
+    transition: right 0.35s ease;
+    border-left: 2px solid var(--clr-green);
+  }
+
+  /* WHEN CHECKBOX IS CHECKED, SLIDE MENU IN */
+  .nav-toggle:checked ~ .nav-links {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: none;
+  }
+
+  .nav-links li a:hover {
+    color: var(--clr-blue-light);
+  }
+
+  /* SHOW CLOSE BUTTON WHEN MENU OPEN */
+  .nav-toggle:checked ~ .nav-links .close-btn {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 26px;
+    color: var(--clr-sand);
+    cursor: pointer;
+  }
+
+  .call-btn {
+    width: 70%;
+    margin-top: 10px;
+  }
+}
+</style>
