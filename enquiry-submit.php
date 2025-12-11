@@ -2,7 +2,8 @@
 // enquiry-submit.php
 
 // Simple helper for sanitising
-function clean_input($value) {
+function clean_input($value)
+{
     return htmlspecialchars(trim($value), ENT_QUOTES, 'UTF-8');
 }
 
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Where to send the enquiry
-    $to = "info@jigboomlift.in"; // change if you want another address
+    $to = "info@jlgboomlift.in"; // change if you want another address
 
     $subject = "New JLG Boomlifts Enquiry from " . $fullName;
 
