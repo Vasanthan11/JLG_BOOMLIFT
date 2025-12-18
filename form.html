@@ -241,6 +241,27 @@
         padding: 2.2rem 1.5rem;
       }
     }
+    /* LOCATION CHIPS */
+.location-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.location-chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.35);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-blue);
+  white-space: nowrap;
+}
+
   </style>
 </head>
 
@@ -281,15 +302,18 @@
          <div>
           <div class="form-contact-label">Our Location</div>
           <div class="form-contact-value">
-            <a>Chennai,
-Coimbatore,
-Kochi,
-Bengaluru,
-Hyderabad,
-Pune,
-Mumbai,
-Delhi</a>
-          </div>
+  <div class="location-chips">
+    <span class="location-chip">Chennai</span>
+    <span class="location-chip">Coimbatore</span>
+    <span class="location-chip">Kochi</span>
+    <span class="location-chip">Bengaluru</span>
+    <span class="location-chip">Hyderabad</span>
+    <span class="location-chip">Pune</span>
+    <span class="location-chip">Mumbai</span>
+    <span class="location-chip">Delhi</span>
+  </div>
+</div>
+
         </div>
          <div>
           <div class="form-contact-label">Working Hours</div>
